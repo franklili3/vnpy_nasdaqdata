@@ -23,11 +23,11 @@
 
 import importlib_metadata
 
-from .rqdata_datafeed import RqdataDatafeed as Datafeed
-from .rqdata_gateway import RqdataGateway
+#from .rqdata_datafeed import RqdataDatafeed as Datafeed
+#from .rqdata_gateway import RqdataGateway
 
 
 try:
-    __version__ = importlib_metadata.version("vnpy_rqdata")
+    __version__ = importlib_metadata.version("vnpy_nasdaqdata")
 except importlib_metadata.PackageNotFoundError:
     __version__ = "dev"
