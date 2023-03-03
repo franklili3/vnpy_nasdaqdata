@@ -72,9 +72,7 @@ class NasdaqdataDatafeed(BaseDatafeed):
 
 
         url = 'https://data.nasdaq.com/api/v3/datasets/'
-        api_key = 'Cfy39msHJ-727k5u3m45'
-        exchange = 'BITFINEX'
-        symbol = 'BTCUSD'
+        api_key = self.password
         # make API request
         res = requests.get(url + exchange + '/' + symbol + '.json',
             params={'api_key': api_key})
@@ -116,7 +114,7 @@ class NasdaqdataDatafeed(BaseDatafeed):
                     low_price=round_to(row.Low, 0.000001),
                     close_price=round_to(row.Last, 0.000001),
                     volume=row.Volume,
-                    gateway_name="NASDAQ"
+                    gateway_name="NASDAQDATA"
                 )
 
                 data.append(bar)
